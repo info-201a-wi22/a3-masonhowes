@@ -1,1 +1,63 @@
+---
+title: Disparities in Imprisonment Rates Among Different Ethnicities
+author: Mason Howes
+date: 2/25/2022
+output: html_document
+---
 
+```{r setup, include= FALSE}
+source("../source/analysis.R")
+```
+
+## Introduction:
+Across the United States, claims have been made that state how Law Enforcement tends to **over-police individuals of color**. One's definition of over-policing may vary, whether it relates to how often an officer pursues a law breaker, how minor of a crime gets called out, etc.
+
+For the purpose of this analysis, I chose to focus on the incarceration totals of different ethnicities utilizing data between the years of 1990 and 2018. 
+
+As the number of _white individuals_ within different counties in the United States tended to be higher than the number of _black individuals_, averages and percentages of the totals were used so that a better comparison can be made.
+
+With that being said, in the year 2016, `r black_imprisoned_recent` total black individuals were behind bars, or `r percent_black`% of all prison inmates. Comparatively, `r white_imprisoned_recent` total white individuals were in prison, or `r percent_white`% of all prison inmates. While it may seem from the listed numbers that there is an equal split of colored and non colored people imprisoned, the number of black people in prison equates to `r black_imprisoned_percent`% of the total number of black individuals in the United States. As for the number of white people in jail, that ends up being `r white_imprisoned_percent`% of the total number of white individuals in the United States. Doesn't seem as close anymore.
+
+Utilizing data spanning the entirety of the United States doesn't help put the numbers as into perspective, however. Because of that, the next points to be discussed will focus on the United States as four different regions, being the **Midwest US**, the **Northeast US**, the **South US**, and the **West US**. On top of that, we will also be looking at how the data has changed from the year 1990 to 2016.
+
+In the **Midwest in 2016**, roughly one in `r midwest_black_ratio_2016` black individuals were behind bars, and roughly one in `r midwest_white_ratio_2016` white individuals were behind bars. Compared to **1990**, the ratio of black individuals behind bars was around one in `r midwest_black_ratio_1990`, as compared to the ratio of white individuals behind bars which was around one in `r midwest_white_ratio_1990`.
+
+In the **Northeast in 2016**, roughly one in `r northeast_black_ratio_2016` black individuals were behind bars, and roughly one in `r northeast_white_ratio_2016` white individuals were behind bars. Compared to **1990**, the ratio of black individuals behind bars was around one in `r northeast_black_ratio_1990`, as compared to the ratio of white individuals behind bars which was around one in `r northeast_white_ratio_1990`.
+
+In the **South in 2016**, roughly one in `r south_black_ratio_2016` black individuals were behind bars, and roughly one in `r south_white_ratio_2016` white individuals were behind bars. Compared to **1990**, the ratio of black individuals behind bars was around one in `r south_black_ratio_1990`, as compared to the ratio of white individuals behind bars which was around one in `r south_white_ratio_1990`.
+
+Finally, in the **West in 2016**, roughly one in `r west_black_ratio_2016` black individuals were behind bars, and roughly one in `r west_white_ratio_2016` white individuals were behind bars. Compared to **1990**, the ratio of black individuals behind bars was around one in `r west_black_ratio_1990`, as compared to the ratio of white individuals behind bars which was around one in `r west_white_ratio_1990`.
+
+## Time Trend Chart
+
+As the number of people imprisoned changes year by year, it helps to look at how the data changes over time to get a better perspective of the over-policing issue. Below is included a graph that looks at how the **Black Prison Population**, the **Latinx Prison Population**, and the **White Prison Population** percentages have changed between the years of 1990 and 2016.
+
+```{r, echo= FALSE}
+time_chart
+```
+
+Looking at the presented data, it helps us realize how the disparities in the imprisonment of different ethnicities has persisted at a pretty consistent rate, despite the growth of the population and despite the fact that nearly 30 years pass in the span of the chart.
+
+## Variable Comparison Chart
+
+As mentioned earlier in the analysis, the ratio between the total number of individuals within ethnicity and the amount that are imprisoned is important to realize in order to get a better grasp of the issue, as even though there are a similar number of Black people and White people imprisoned, there is many more White people within the United States. Below is a graph that helps put this into perspective, with the **red bar** being the total number of individuals within said population, and the **blue bar** being the number of those individuals who are incarcerated.
+
+(NOTE: The blue bar for both is typically much lower, however to help visualize it, the total population for both the Black and White communities has been divided by 10.)
+
+```{r, echo= FALSE}
+combined_graph
+```
+
+As expected, the bar for the Black and White populations could be swapped and it would be hard to tell if any change had been made, however the red bars show that the ratio between the two data points is massive.
+
+## Map
+
+For the final graph included in this analysis, we will be analyzing how the data previously discussed is distributed across the country. Previously, we mentioned the United States split up into four different regions, however it is best realized through the state data. Below are the graphs for both the Black and White percentages.
+
+```{r, echo= FALSE}
+black_imprison_states 
+
+white_imprison_states
+```
+
+In the center of the country seems to be the point where the highest amount of police actions take place, however it takes place much more often with the black population, as the White percentage never hits 1%, and the Black data surpasses 8%.
